@@ -1,0 +1,5 @@
+C:\Users\Admin\RiderProjects\Huffman coding new project\Huffman coding new project\obj\Debug\net7.0\Huffman coding new project.csproj.AssemblyReference.cache
+C:\Users\Admin\RiderProjects\Huffman coding new project\Huffman coding new project\obj\Debug\net7.0\Huffman coding new project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\RiderProjects\Huffman coding new project\Huffman coding new project\obj\Debug\net7.0\Huffman coding new project.AssemblyInfoInputs.cache
+C:\Users\Admin\RiderProjects\Huffman coding new project\Huffman coding new project\obj\Debug\net7.0\Huffman coding new project.AssemblyInfo.cs
+C:\Users\Admin\RiderProjects\Huffman coding new project\Huffman coding new project\obj\Debug\net7.0\Huffman coding new project.csproj.CoreCompileInputs.cache

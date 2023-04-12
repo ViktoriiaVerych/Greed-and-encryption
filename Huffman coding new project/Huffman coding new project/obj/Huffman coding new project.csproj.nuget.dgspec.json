@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\RiderProjects\\Huffman coding new project\\Huffman coding new project\\Huffman coding new project.csproj": {}
+    "C:\\Users\\1\\RiderProjects\\Huffman-coding-new-project-repository\\Huffman coding new project\\Huffman coding new project\\Huffman coding new project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\RiderProjects\\Huffman coding new project\\Huffman coding new project\\Huffman coding new project.csproj": {
+    "C:\\Users\\1\\RiderProjects\\Huffman-coding-new-project-repository\\Huffman coding new project\\Huffman coding new project\\Huffman coding new project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\RiderProjects\\Huffman coding new project\\Huffman coding new project\\Huffman coding new project.csproj",
+        "projectUniqueName": "C:\\Users\\1\\RiderProjects\\Huffman-coding-new-project-repository\\Huffman coding new project\\Huffman coding new project\\Huffman coding new project.csproj",
         "projectName": "Huffman coding new project",
-        "projectPath": "C:\\Users\\Admin\\RiderProjects\\Huffman coding new project\\Huffman coding new project\\Huffman coding new project.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\RiderProjects\\Huffman coding new project\\Huffman coding new project\\obj\\",
+        "projectPath": "C:\\Users\\1\\RiderProjects\\Huffman-coding-new-project-repository\\Huffman coding new project\\Huffman coding new project\\Huffman coding new project.csproj",
+        "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\1\\RiderProjects\\Huffman-coding-new-project-repository\\Huffman coding new project\\Huffman coding new project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\1\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

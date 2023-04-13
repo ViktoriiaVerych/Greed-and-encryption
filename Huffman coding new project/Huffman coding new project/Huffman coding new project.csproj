@@ -8,4 +8,15 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Include="obj\Debug\net7.0\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="obj\Debug\net7.0\apphost.exe" />
+      <Content Include="obj\Debug\net7.0\Huffman coding new project.dll" />
+      <Content Include="obj\Debug\net7.0\Huffman coding new project.genruntimeconfig.cache" />
+      <Content Include="obj\Debug\net7.0\Huffman coding new project.pdb" />
+    </ItemGroup>
+
 </Project>

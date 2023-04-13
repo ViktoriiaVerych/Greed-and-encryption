@@ -1,0 +1,23 @@
+﻿{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Huffman coding new project/1.0.0": {
+        "runtime": {
+          "Huffman coding new project.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Huffman coding new project/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

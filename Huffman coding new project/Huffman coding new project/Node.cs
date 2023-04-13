@@ -5,15 +5,17 @@ namespace Huffman_coding_new_project
     public class Node
     {
         public char Symbol { get; set; }
-        public int Frequency { get; set; }
-        public Node Right { get; set; }
-        public Node Left { get; set; }
+        public int Frequency { get;  }
+        public Node Right { get;  }
+        public Node Left { get;  }
+        
+        public string Value { get; }
 
         public List<bool> Traverse(char symbol, List<bool> data = null)
         {
             if (data == null)
                 data = new List<bool>();
-
+        
             // Leaf
             if (Right == null && Left == null)
             {
@@ -26,7 +28,7 @@ namespace Huffman_coding_new_project
             {
                 List<bool> left = null;
                 List<bool> right = null;
-
+        
                 if (Left != null)
                 {
                     List<bool> leftPath = new List<bool>();
@@ -34,7 +36,7 @@ namespace Huffman_coding_new_project
                     leftPath.Add(false);
                     left = Left.Traverse(symbol, leftPath);
                 }
-
+        
                 if (Right != null)
                 {
                     List<bool> rightPath = new List<bool>();
@@ -42,12 +44,19 @@ namespace Huffman_coding_new_project
                     rightPath.Add(true);
                     right = Right.Traverse(symbol, rightPath);
                 }
-
+        
                 if (left != null)
                     return left;
                 else
                     return right;
             }
+        }
+        public Node(string value, int frequency, Node left, Node right)
+        {
+            Frequency = frequency;
+            Right = right;
+            Left = left;
+            Value = value;
         }
     }
 }

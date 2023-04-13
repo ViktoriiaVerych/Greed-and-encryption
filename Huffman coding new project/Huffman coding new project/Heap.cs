@@ -2,100 +2,105 @@
 
 public class Heap
 {
-    public static int capacity = 10;
-    private int heapSize;
-    private Node[] elements = new Node[capacity];
-
+    private static int _capacity = 10;
+    private int _heapSize;
+    private Node[] _elements = new Node[_capacity];
+    
     private int GetParentIndex(int childIndex)
     {
         return (childIndex - 1) / 2;
     }
-    private int GetRightChildIndex(int parentIndex)
-    {
-        return parentIndex * 2 + 2;
-    }
-
     private int GetLeftChildIndex(int parentIndex)
     {
         return parentIndex * 2 + 1;
     }
+
+    private int GetRightChildIndex(int parentIndex)
+    {
+        return parentIndex * 2 + 2;
+    }
+   
     private int GetParent(int childIndex)
     {
-        return elements[GetParentIndex(childIndex)].Frequency;
+        return _elements[GetParentIndex(childIndex)].Frequency;
     }
-    private int GetRightChild(int parentIndex)
-    {
-        return elements[GetRightChildIndex(parentIndex)].Frequency;
-    }
-
     private int GetLeftChild(int parentIndex)
     {
-        return elements[GetLeftChildIndex(parentIndex)].Frequency;
+        return _elements[GetLeftChildIndex(parentIndex)].Frequency;
     }
 
+    private int GetRightChild(int parentIndex)
+    {
+        return _elements[GetRightChildIndex(parentIndex)].Frequency;
+    }
     private bool HasParent(int childIndex)
     {
         return GetParentIndex(childIndex) >= 0;
     }
 
-    private bool HasRightChild(int parentIndex)
-    {
-        return GetRightChildIndex(parentIndex) < heapSize;
-    }
 
     private bool HasLeftChild(int parentIndex)
     {
-        return GetLeftChildIndex(parentIndex) < heapSize;
+        return GetLeftChildIndex(parentIndex) < _heapSize;
     }
 
+    private bool HasRightChild(int parentIndex)
+    {
+        return GetRightChildIndex(parentIndex) < _heapSize;
+    }
+    
     private void Change(int firstIndex, int secondIndex)
     {
-        var first = elements[firstIndex];
-        var second = elements[secondIndex];
-        elements[firstIndex] = second;
-        elements[secondIndex] = first;
+        var first = _elements[firstIndex];
+        var second = _elements[secondIndex];
+        _elements[firstIndex] = second;
+        _elements[secondIndex] = first;
     }
 
-    private void IncreaseSize()
+    private void NewSize()
     {
-        if (capacity == heapSize)
+        if (_capacity == _heapSize)
         {
-            var newSize = capacity * 2;
-            var increasedArray = new Node[newSize];
-            for (int i = 0; i < elements.Length; i++)
-            {
-                increasedArray[i] = elements[i];
-            }
+            var newSize = _capacity * 2;
 
-            elements = increasedArray;
+            var biggerArray = new Node[newSize];
+            for (int i = 0; i < _elements.Length; i++)
+            {
+                biggerArray[i] = _elements[i];
+            }
+            _elements = biggerArray;
         }
+        
+    }
+    public void Add(Node item)
+    {
+        NewSize();
+        _elements[_heapSize] = item;
+        _heapSize++; 
+        HeapifyUp();
     }
 
     private void HeapifyUp()
     {
-        var childIndex = heapSize - 1;
-        while (HasParent(childIndex) && GetParent(childIndex) > elements[childIndex].Frequency)
+        var childIndex = _heapSize - 1;
+        while (HasParent(childIndex) && GetParent(childIndex) > _elements[childIndex].Frequency)
         {
-            Change(GetParent(childIndex), childIndex);
+            Change(GetParentIndex(childIndex), childIndex);
             childIndex = GetParentIndex(childIndex);
         }
     }
-    public void Add(Node item)
-    {
-        IncreaseSize();
-        elements[heapSize] = item;
-        heapSize++;
-        HeapifyUp();
-    }
-
     public Node GetMin()
     {
-        if (heapSize > 0)
-        {
-            return elements[0];
-        }
-
-        throw new Exception("Empty Heap");
+        if (_heapSize > 0) return _elements[0];
+        throw new Exception("Empty heap");
+    }
+    public Node TopItem()
+    {
+        var topNode = _elements[0];
+        _elements[0] = _elements[_heapSize - 1];
+        _heapSize--;
+        HeapifyDown();
+        return topNode;
     }
 
     private void HeapifyDown()
@@ -103,37 +108,28 @@ public class Heap
         var elementIndex = 0;
         while (HasLeftChild(elementIndex))
         {
-            var smallChildIndex = GetLeftChildIndex(elementIndex);
+            var smallerChildIndex = GetLeftChildIndex(elementIndex);
             if (HasRightChild(elementIndex) && GetRightChild(elementIndex) < GetLeftChild(elementIndex))
             {
-                smallChildIndex = GetRightChildIndex(elementIndex);
+                smallerChildIndex = GetRightChildIndex(elementIndex);
             }
 
-            if (elements[elementIndex].Frequency < elements[smallChildIndex].Frequency)
+            if (_elements[elementIndex].Frequency < _elements[smallerChildIndex].Frequency)
             {
                 break;
-                
             }
-            Change(elementIndex, smallChildIndex);
-            elementIndex = smallChildIndex;
+
+            Change(elementIndex, smallerChildIndex);
+
+            elementIndex = smallerChildIndex;
         }
-    }
-
-    public Node PollTopItem()
-    {
-        var topNode = elements[0];
-        elements[0] = elements[heapSize - 1];
-        heapSize--;
-        HeapifyDown();
-        return topNode;
 
     }
-
     public int Count()
     {
-        return heapSize;
+        return _heapSize;
     }
+    
+
 }
-
-
-
+    

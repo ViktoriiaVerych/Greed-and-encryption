@@ -66,8 +66,10 @@ void TreeBuilder()
 {
     foreach (var keyValue in elementsFreq)
     {
+        //створює нову ноду для пари 
         heap.Add(new Node(keyValue.Key.ToString(), keyValue.Value, null, null));
     }
+    // будуємо дерево з комбінуванням двох низько-частотних нод
     while (heap.Count() != 1)
     {
         var first = heap.TopItem();
@@ -77,7 +79,7 @@ void TreeBuilder()
         
     }
 }
-
+//зчитувач частот, створює таблицю для відстежування кожного символу
 void FreqReader(Dictionary<char, int> storeElements,  string path)
 {
     foreach (var line in File.ReadAllLines(path))
@@ -117,7 +119,7 @@ void Encode(Node root, string str, Dictionary<string, string> huffmanCode)
     {
         huffmanCode.Add(root.Value, str);
     }
-
+    //рекурсивний виклик, left child = 0, right child = 1
     Encode(root.Left, str + "0", huffmanCode);
     Encode(root.Right, str + "1", huffmanCode);
 }
@@ -138,7 +140,7 @@ void CodedElementsPrinter(Dictionary<string, string> elements)
     {
         
         Console.Write(element.Key);
-        Console.Write(":");
+        Console.Write(" || ");
         Console.WriteLine(element.Value);
     }
 }
@@ -172,9 +174,10 @@ void HuffmanCodedFileWriter()
 
 void DecodeFile(Node root, List<string> codedText)
 {
+    string decodedFile = null;
     var current = root;
     var word = string.Join("", codedText);
-
+    //Траверс на основі бітів в закодованому тексті
     foreach (var bit in word)
     {
         if (bit == '0')
@@ -185,7 +188,7 @@ void DecodeFile(Node root, List<string> codedText)
         {
             current = current.Right;
         }
-
+        //досягли кінця, додаємо відповідний символ і повертаємось до root
         if (current.Right == null && current.Left == null)
         {
             decodedFile += current.Value;

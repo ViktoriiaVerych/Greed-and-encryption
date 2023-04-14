@@ -49,6 +49,7 @@ public class Heap
         return GetRightChildIndex(parentIndex) < _heapSize;
     }
     
+    //міняємо місцями ноди
     private void Change(int firstIndex, int secondIndex)
     {
         var first = _elements[firstIndex];
@@ -57,24 +58,10 @@ public class Heap
         _elements[secondIndex] = first;
     }
 
-    private void NewSize()
-    {
-        if (_capacity == _heapSize)
-        {
-            var newSize = _capacity * 2;
 
-            var biggerArray = new Node[newSize];
-            for (int i = 0; i < _elements.Length; i++)
-            {
-                biggerArray[i] = _elements[i];
-            }
-            _elements = biggerArray;
-        }
-        
-    }
     public void Add(Node item)
     {
-        NewSize();
+        
         _elements[_heapSize] = item;
         _heapSize++; 
         HeapifyUp();

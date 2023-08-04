@@ -1,6 +1,6 @@
 ﻿namespace Huffman_coding_new_project;
 
-
+/*
 1. The `Encoder` class has three methods: `Encode`, `PrintCodedElements`, and a helper method `IsLeaf`.
 
 2. **Encode Method**:
@@ -20,7 +20,7 @@
 
 In summary, the `Encoder` class is responsible for generating Huffman codes for symbols in a given Huffman tree. It uses a recursive approach to traverse the tree, assigning '0' for left edges and '1' for right edges in the encoding path. The `PrintCodedElements` method helps visualize the mapping between symbols and their corresponding Huffman codes. The `IsLeaf` method is a helper function to determine whether a node is a leaf in the Huffman tree.
 
-
+*/
 public class Encoder
 {
     public void Encode(Node root, string str, Dictionary<string, string> huffmanTable)

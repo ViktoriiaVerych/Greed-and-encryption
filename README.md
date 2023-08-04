@@ -13,5 +13,5 @@ Huffman coding plays a pivotal role in various familiar technologies, including 
 
 The scope of this paper encompasses the implementation of Huffman coding, along with a specific application variation thereof.
 
-## Assignment Description:
+## Assignment 4 Description:
 https://github.com/kse-ua/algorithms/blob/main/assignments_2023/assignment_4.md

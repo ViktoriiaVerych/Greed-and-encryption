@@ -1,5 +1,11 @@
 ﻿using System.Collections.Generic;
 
+/*
+The Node class represents nodes in a tree structure, commonly used for Huffman coding.
+It has properties for the Symbol (character), Frequency, references to the Right and Left child nodes, and a Value which could represent a combined value in the case of Huffman coding.
+The Traverse method is used to traverse the tree and find a path to a specified symbol (character). It returns a list of booleans representing the path taken to reach the desired symbol.
+The constructor initializes the node with a Value, Frequency, and references to its children (Left and Right).
+*/
 namespace Huffman_coding_new_project
 {
     public class Node
@@ -16,7 +22,6 @@ namespace Huffman_coding_new_project
             if (data == null)
                 data = new List<bool>();
         
-            // Leaf
             if (Right == null && Left == null)
             {
                 if (symbol.Equals(this.Symbol))

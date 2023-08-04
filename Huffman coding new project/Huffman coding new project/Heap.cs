@@ -1,5 +1,5 @@
 ﻿// namespace Huffman_coding_new_project;
-//
+// ISNT USED
 // public class Heap
 // {
 //     private static int _capacity = 10;
